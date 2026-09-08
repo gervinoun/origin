@@ -1,71 +1,41 @@
 <?php
-$num = 10;
-if($num > 10) {
-    var_dump('Tauri the goat');
+
+for ($i = 0; $i < 10; $i++) {
+    var_dump($i);
+} 
+
+for($i = 9; $i > 0; $i--) {
+    var_dump($i);
 }
 
-$num = 10;
-if($num > 10) {
-    var_dump('Tauri the goat');
-} else {
-    var_dump('Tauri is not the goat');
+for ($i = 2; $i<1_000_000; $i*=2) {
+    var_dump($i);
+}
+$time = time();
+while(time() < $time + 1) {
+    var_dump($i++);
 }
 
-$num = 10;
-if($num > 10) {
-    var_dump('Tauri the goat');
-} else if($num == 10) {
-    var_dump('Im unsure 0.3seconds');
-} else {
-    var_dump('Tauri is not the goat');
+while(false) {
+    var_dump('while');
 }
 
+do {
+    var_dump('do');
+} while(false);
 
-$day = (int) date('w');
-$day = intval(date('w'));
-if ($day == 0) {
-    var_dump('Sunday');
-} else if ($day == 1) {
-    var_dump('Monday');
-} else if ($day == 2) {
-    var_dump('Tuesday');
-} else if ($day == 3) {
-    var_dump('Wednesday');
-} else if ($day == 4) {
-    var_dump('Thursday');
-} else if ($day == 5) {
-    var_dump('Friday');
-} else if ($day == 6) {
-    var_dump('Saturday');
-} else {
-    var_dump('Why bebe');
+//while(true)  {
+
+//}
+
+$fruits = ['Apple', 'Banana', 'Cherry'];
+foreach($fruits as $fruit) {
+    var_dump($fruit);
 }
 
-switch($day) {
-    case 0:
-        var_dump('Sunday');
-        break;
-    case 1:
-        var_dump('Monday');
-        break;
-    case 2:
-        var_dump('Tuesday');
-        break;
-    case 3:
-        var_dump('Wednesday');
-        break;
-    case 4:
-        var_dump('Thursday');
-        break;
-    case 5:
-    case 6:
-        var_dump('Partyday');
-        break;
-    default:
-        var_dump('Why bebe');
-        break;
+foreach($fruits as $key => $fruit) {
+    var_dump($key, $fruit);
+    $fruit = 'LAagri';
 }
 
-
-
-var_dump($day);
+var_dump($fruits);
