@@ -1,22 +1,37 @@
 <?php
 
-$test = function () {
-    var_dump('shhh');
+class Box {
+    public $length;
+    public $width;
+    public $height;
+    public $isOpen = false;
+    public $hasBeenOpened = false;
 
-};
+    public function open() {
+        $this -> isOpen = true;
+    }
+}
 
-var_dump($test);
+$num1 = 1;
+$num2 = &$num1;
+$num1 = 2;
+var_dump($num1, $num2);
 
-$test();
-call_user_func($test);
 
-$numbers = [1, 2, 3, 4, 5];
+$box1 = new Box();
+$box1 -> width = 1;
+$box2 = clone $box1;
+$box1 -> width = 2;
+var_dump($box1, $box2);
 
-$squares = array_map(function ($n) {
-    return $n * $n;
-}, $numbers);
+$numbers = [1,2,3,4,5];
+for ($i=0;$i<count($numbers);$i++){
+    $n = $numbers[$i];
+    $n+=1;
 
-var_dump($squares);
+}
+foreach($numbers as $n){
+    $n+=1
+}
+var_dump($numbers);
 
-$squares = array_map(fn ($n) => $n * $n, $numbers);
-var_dump($squares);   
